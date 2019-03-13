@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FibonacciAndroid.iml" filepath="$PROJECT_DIR$/FibonacciAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Fibonacci_Android.iml" filepath="$PROJECT_DIR$/.idea/Fibonacci_Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
