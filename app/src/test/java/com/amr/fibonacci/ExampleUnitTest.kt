@@ -16,7 +16,6 @@ class ExampleUnitTest {
         assertEquals(Fibonacci.fib(0), 0)
         assertEquals(Fibonacci.fib(1), 1)
         assertEquals(Fibonacci.fib(9), 34)
-        assertEquals(Fibonacci.fib(Long.MAX_VALUE), 34)
     }
 
     @Test(expected = Exception::class)
