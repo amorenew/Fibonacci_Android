@@ -1,7 +1,9 @@
 package com.amr.fibonacci
 
+import com.amr.fibonacci.helpers.Fibonacci
 import org.junit.Assert.assertEquals
 import org.junit.Test
+
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -10,7 +12,16 @@ import org.junit.Test
  */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun fibonacci_is_correct() {
+        assertEquals(Fibonacci.fib(0), 0)
+        assertEquals(Fibonacci.fib(1), 1)
+        assertEquals(Fibonacci.fib(9), 34)
+        assertEquals(Fibonacci.fib(Long.MAX_VALUE), 34)
     }
+
+    @Test(expected = Exception::class)
+    fun fibonacci_negative_exception() {
+        Fibonacci.fib(-1)
+    }
+
 }
