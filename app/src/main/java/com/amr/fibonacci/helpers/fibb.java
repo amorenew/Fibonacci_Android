@@ -1,7 +1,5 @@
 package com.amr.fibonacci.helpers;
 
-import io.reactivex.Observable;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -10,12 +8,12 @@ public class fibb {
     private static final BigDecimal SQRT_DIG = new BigDecimal(150);
     private static final BigDecimal SQRT_PRE = new BigDecimal(10).pow(SQRT_DIG.intValue());
 
-    public static Observable<Long> fibsStartFrom(Long f1, Long f2) {
-        return Observable.just(true)
-                .repeat()
-                .scan(new Tuple(f1, f2), (tuple, dummyTrue) -> new Tuple(tuple.value2, tuple.value1 + tuple.value2))
-                .map(Tuple::value2);
-    }
+//    public static Observable<Long> fibsStartFrom(Long f1, Long f2) {
+//        return Observable.just(true)
+//                .repeat()
+//                .scan(new Tuple(f1, f2), (tuple, dummyTrue) -> new Tuple(tuple.value2, tuple.value1 + tuple.value2))
+//                .map(Tuple::value2);
+//    }
 
     public static BigDecimal fib(int n) {
         BigDecimal one = new BigDecimal(1);
