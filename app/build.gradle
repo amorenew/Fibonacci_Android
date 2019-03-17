@@ -25,6 +25,11 @@ android {
         }
     }
 
+    kapt {
+        //for dagger
+        generateStubs = true
+    }
+
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
@@ -55,6 +60,19 @@ dependencies {
 
     //Android Architecture Components
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+
+    //Dagger 2
+    implementation "com.google.dagger:dagger-android:2.19"
+    implementation "com.google.dagger:dagger-android-support:2.18"
+    kapt "com.google.dagger:dagger-compiler:2.19"
+    kapt "com.google.dagger:dagger-android-processor:2.19"
+
+//    implementation "com.google.dagger:dagger:2.19"
+//    kapt 'com.google.dagger:dagger-compiler:2.19'//for Kotlin dagger instead of annotationProcessor "com.google.dagger:dagger-compiler:2.19"
+//    kapt 'com.google.dagger:dagger-android-processor:2.19'
+
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation 'javax.inject:javax.inject:1'
 
 
 

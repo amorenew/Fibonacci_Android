@@ -1,6 +1,6 @@
 package com.amr.fibonacci
 
-import com.amr.fibonacci.helpers.Fibonacci
+import com.amr.fibonacci.helpers.FibonacciHelper
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -14,9 +14,12 @@ class ExampleUnitTest {
 
     @Test
     fun fibonacci_generate_number() {
-        assertEquals(Fibonacci.generateFibonacciNumber(8), 21.toBigInteger())
-        assertEquals(Fibonacci.generateFibonacciNumber(9), 34.toBigInteger())
-        assertEquals(Fibonacci.generateFibonacciNumber(9, 13.toBigInteger(), 21.toBigInteger()), 34.toBigInteger())
+        assertEquals(FibonacciHelper.generateFibonacciNumber(8), 21.toBigInteger())
+        assertEquals(FibonacciHelper.generateFibonacciNumber(9), 34.toBigInteger())
+        assertEquals(
+            FibonacciHelper.generateFibonacciNumber(9, 13.toBigInteger(), 21.toBigInteger()),
+            34.toBigInteger()
+        )
     }
 
 
@@ -36,13 +39,13 @@ class ExampleUnitTest {
             34.toBigInteger()//n=9
         )
 
-        assertEquals(Fibonacci.generateFibonacciArray(4, 3.toBigInteger(), 5.toBigInteger())[1], fibArray[7])
-        assertEquals(Fibonacci.generateFibonacciArray(7)[6], fibArray[6])
+        assertEquals(FibonacciHelper.generateFibonacciArray(4, 3.toBigInteger(), 5.toBigInteger())[1], fibArray[7])
+        assertEquals(FibonacciHelper.generateFibonacciArray(7)[6], fibArray[6])
     }
 
     @Test(expected = Exception::class)
     fun fibonacci_negative_exception() {
-        Fibonacci.generateFibonacciNumber(-1)
+        FibonacciHelper.generateFibonacciNumber(-1)
     }
 
 }

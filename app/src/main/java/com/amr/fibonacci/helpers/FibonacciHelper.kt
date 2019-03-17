@@ -1,8 +1,9 @@
 package com.amr.fibonacci.helpers
 
 import java.math.BigInteger
+import javax.inject.Inject
 
-class Fibonacci {
+class FibonacciHelper @Inject constructor() {
 
     companion object {
 
@@ -37,7 +38,7 @@ class Fibonacci {
             value1: BigInteger = 0.toBigInteger(),
             value2: BigInteger = 0.toBigInteger()
         ): ArrayList<BigInteger> {
-            /* Declare an array to store Fibonacci numbers. */
+            /* Declare an array to store FibonacciHelper numbers. */
             val f = ArrayList<BigInteger>(arraySize) // 1 extra to handle case, n = 0
 
             /* 0th and 1st number of the series are 0 and 1*/

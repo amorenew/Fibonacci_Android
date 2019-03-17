@@ -51,6 +51,7 @@ class EndlessViewModel : ViewModel() {
 
                 val position = list.size
                 val newItems: ArrayList<BigInteger> = if (list.size < 2)
+
                     repository.getItemsPage()
                 else
                     repository.getItemsPage(list[list.size - 3].value, list[list.size - 2].value)
