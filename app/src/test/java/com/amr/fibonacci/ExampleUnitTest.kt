@@ -67,7 +67,7 @@ class ExampleUnitTest {
 //        assertEquals(Fibonacci.fib3(9.toBigInteger()).size, 11)
 
 //        assertEquals(Fibonacci.fib3(9.toBigInteger())[9], intarr[9])
-        assertEquals(Fibonacci.fib4(4, 3.toBigInteger(), 5.toBigInteger())[1], intarr[9])
+        assertEquals(Fibonacci.fib4(4, 3.toBigInteger(), 5.toBigInteger())[1], intarr[7])
         assertEquals(Fibonacci.fib4(7)[6], intarr[6])
     }
 //
