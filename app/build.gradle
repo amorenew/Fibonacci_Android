@@ -30,12 +30,6 @@ android {
         targetCompatibility = '1.8'
     }
 
-    kapt {
-
-        generateStubs = true
-
-    }
-
     dataBinding {
         enabled = true
     }
