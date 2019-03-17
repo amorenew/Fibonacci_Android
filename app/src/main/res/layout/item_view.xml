@@ -7,31 +7,40 @@
 
         <variable
                 name="item"
-                type="String"/>
+                type="com.amr.fibonacci.helpers.FibNumber"/>
     </data>
 
     <androidx.cardview.widget.CardView
             app:cardCornerRadius="10dp"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="100dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:orientation="vertical">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:text="@{item.positionText}"
+                    android:textSize="16sp"
+                    tools:text="Item 1"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="start|center"
+                    android:textAlignment="gravity"
+                    android:text="@{item.valueText}"
+                    android:textSize="16sp"
+                    tools:text="Item 2"/>
+        </LinearLayout>
 
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:gravity="center_vertical"
-                android:text="@{item}"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Item 1"/>
     </androidx.cardview.widget.CardView>
 </layout>

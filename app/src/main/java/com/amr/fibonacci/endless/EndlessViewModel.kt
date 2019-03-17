@@ -5,16 +5,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.amr.fibonacci.Event
+import com.amr.fibonacci.helpers.FibNumber
 import com.amr.fibonacci.repository.ItemsRepository
+import java.math.BigInteger
 
 data class Page(val positionStart: Int, val count: Int)
 
 class EndlessViewModel : ViewModel() {
 
     private val repository = ItemsRepository()
-    private val list = mutableListOf<String>()
+    private val list = mutableListOf<FibNumber>()
 
-    private val _items = MutableLiveData<List<String>>().apply { value = list }
+    private val _items = MutableLiveData<List<FibNumber>>().apply { value = list }
     private val _addItems = MutableLiveData<Event<Page>>()
     private val _removeItem = MutableLiveData<Event<Int>>()
 
@@ -24,7 +26,7 @@ class EndlessViewModel : ViewModel() {
 
     private var delay = 0L
 
-    val items: LiveData<List<String>>
+    val items: LiveData<List<FibNumber>>
         get() = _items
 
     val addItems: LiveData<Event<Page>>
@@ -48,25 +50,28 @@ class EndlessViewModel : ViewModel() {
             handler.postDelayed({
 
                 val position = list.size
-                var newItems = List(0) { "" }
-                if (list.size == 0)
-                    newItems = repository.getItemsPage()
+                val newItems: ArrayList<BigInteger> = if (list.size < 2)
+                    repository.getItemsPage()
                 else
-                    newItems = repository.getItemsPage()
+                    repository.getItemsPage(list[list.size - 3].value, list[list.size - 2].value)
 
-                list.addAll(newItems)
+                val fibNumbers = ArrayList<FibNumber>()
+                for ((index, value) in newItems.withIndex()) {
+                    fibNumbers.add(FibNumber((list.size + index - 1).toLong(), value))
+                }
+                list.addAll(fibNumbers)
 
                 addItems(position, newItems.size)
                 removeLoading(position - 1)
 
-                delay = if (delay == 0L) 3000 else 0
+                delay = if (delay == 0L) 5000 else 0
                 loading = false
             }, delay)
         }
     }
 
     private fun showLoading() {
-        list.add("loading")
+        list.add(FibNumber(-1))
         addItems(list.size - 1, 1)
     }
 

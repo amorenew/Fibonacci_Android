@@ -3,7 +3,6 @@ package com.amr.fibonacci
 import com.amr.fibonacci.helpers.Fibonacci
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import java.math.BigInteger
 
 
 /**
@@ -31,22 +30,45 @@ class ExampleUnitTest {
 
     @Test
     fun fibonacci22() {
-        val intarr = Array<BigInteger>(5) {
-            0.toBigInteger()
-            1.toBigInteger()
-            1.toBigInteger()
-            2.toBigInteger()
-            3.toBigInteger()
-            5.toBigInteger()
-            8.toBigInteger()
-            13.toBigInteger()
-            21.toBigInteger()
+        val intarr = arrayOf(
+            0.toBigInteger(),
+            1.toBigInteger(),
+            1.toBigInteger(),
+            2.toBigInteger(),
+            3.toBigInteger(),
+            5.toBigInteger(),
+            8.toBigInteger(),
+            13.toBigInteger(),
+            21.toBigInteger(),
             34.toBigInteger()
-        }
+        )
         //0, 1, 1, 2, 3, 5, 8, 13, 21, 34
         assertEquals(Fibonacci.fib3(9.toBigInteger()).size, 11)
 
+        assertEquals(Fibonacci.fib3(9.toBigInteger())[9], intarr[9])
         assertEquals(Fibonacci.fib3(9.toBigInteger())[5], intarr[5])
+    }
+
+    @Test
+    fun fibonacci23() {
+        val intarr = arrayOf(
+            0.toBigInteger(),//n=0
+            1.toBigInteger(),//n=1
+            1.toBigInteger(),//n=2
+            2.toBigInteger(),//n=3
+            3.toBigInteger(),//n=4
+            5.toBigInteger(),//n=5
+            8.toBigInteger(),//n=6
+            13.toBigInteger(),//n=7
+            21.toBigInteger(),//n=8
+            34.toBigInteger()//n=9
+        )
+        //0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+//        assertEquals(Fibonacci.fib3(9.toBigInteger()).size, 11)
+
+//        assertEquals(Fibonacci.fib3(9.toBigInteger())[9], intarr[9])
+        assertEquals(Fibonacci.fib4(4, 3.toBigInteger(), 5.toBigInteger())[1], intarr[9])
+        assertEquals(Fibonacci.fib4(7)[6], intarr[6])
     }
 //
 //    @Test(expected = Exception::class)

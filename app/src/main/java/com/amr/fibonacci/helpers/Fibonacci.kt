@@ -54,6 +54,7 @@ class Fibonacci {
             f[0] = 0.toBigInteger()
             f[1] = 1.toBigInteger()
 
+
             var i = 2.toBigInteger()
             while (i <= n) {
                 /* Add the previous 2 numbers in the series
@@ -65,6 +66,34 @@ class Fibonacci {
             return f
         }
 
-    }
 
+        fun fib4(
+            arraySize: Int = 10,
+            value1: BigInteger = 0.toBigInteger(),
+            value2: BigInteger = 0.toBigInteger()
+        ): ArrayList<BigInteger> {
+            /* Declare an array to store Fibonacci numbers. */
+            val f = ArrayList<BigInteger>(arraySize) // 1 extra to handle case, n = 0
+
+            /* 0th and 1st number of the series are 0 and 1*/
+            if (value1 > 0.toBigInteger() && value2 > 0.toBigInteger()) {
+                f.add(value1 + value2)//index 0
+                f.add(value2 + f[0])//index 1
+            } else {
+                f.add(0.toBigInteger())//index 0
+                f.add(1.toBigInteger())//index 1
+            }
+
+            var i = 2.toBigInteger()
+            while (i < arraySize.toBigInteger()) {
+                /* Add the previous 2 numbers in the series
+     and store it */
+                f.add(i.toInt(), f[i.toInt() - 1] + f[i.toInt() - 2])
+                i++
+            }
+
+            return f
+        }
+
+    }
 }

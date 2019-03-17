@@ -10,12 +10,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.amr.fibonacci.R
 import com.amr.fibonacci.databinding.ItemViewBinding
+import com.amr.fibonacci.helpers.FibNumber
 import com.amr.fibonacci.startAnimation
 import kotlinx.android.synthetic.main.loading_view.view.*
 
 class ItemsAdapter : RecyclerView.Adapter<ItemsAdapter.ViewHolder>() {
 
-    private var items: List<String> = emptyList()
+    private var items: List<FibNumber> = emptyList()
 
     private val loading = 0
     private val item = 1
@@ -36,7 +37,7 @@ class ItemsAdapter : RecyclerView.Adapter<ItemsAdapter.ViewHolder>() {
         }
     }
 
-    fun update(items: List<String>) {
+    fun update(items: List<FibNumber>) {
         this.items = items
         notifyDataSetChanged()
     }
@@ -44,14 +45,14 @@ class ItemsAdapter : RecyclerView.Adapter<ItemsAdapter.ViewHolder>() {
     companion object {
         @JvmStatic
         @BindingAdapter("items")
-        fun RecyclerView.bindItems(items: List<String>) {
+        fun RecyclerView.bindItems(items: List<FibNumber>) {
             val adapter = adapter as ItemsAdapter
             adapter.update(items)
         }
     }
 
     override fun getItemViewType(position: Int) =
-        if (items[position] == "loading") loading else item
+        if (items[position].position == (-1).toLong()) loading else item
 
     abstract class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
@@ -65,7 +66,7 @@ class ItemsAdapter : RecyclerView.Adapter<ItemsAdapter.ViewHolder>() {
         )
     ) : ViewHolder(binding.root) {
 
-        fun bind(item: String) {
+        fun bind(item: FibNumber) {
             binding.item = item
         }
     }
