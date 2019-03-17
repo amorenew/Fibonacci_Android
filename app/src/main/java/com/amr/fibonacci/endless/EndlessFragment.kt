@@ -41,7 +41,6 @@ class EndlessFragment : Fragment() {
         recyclerView.layoutManager = layoutManager
         recyclerView.hasFixedSize()
         recyclerView.adapter = ItemsAdapter()
-//        recyclerView.addItemDecoration(DividerItemDecoration(context, layoutManager.orientation))
 
         recyclerView.endless { viewModel.fetchItems() }
 

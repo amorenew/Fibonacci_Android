@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.amr.fibonacci.Event
-import com.amr.fibonacci.helpers.FibNumber
+import com.amr.fibonacci.items.FibNumber
 import com.amr.fibonacci.repository.ItemsRepository
 import java.math.BigInteger
 

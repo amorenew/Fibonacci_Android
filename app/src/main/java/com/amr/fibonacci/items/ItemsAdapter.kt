@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.amr.fibonacci.R
 import com.amr.fibonacci.databinding.ItemViewBinding
-import com.amr.fibonacci.helpers.FibNumber
 import com.amr.fibonacci.startAnimation
 import kotlinx.android.synthetic.main.loading_view.view.*
 

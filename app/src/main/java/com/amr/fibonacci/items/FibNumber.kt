@@ -1,4 +1,4 @@
-package com.amr.fibonacci.helpers
+package com.amr.fibonacci.items
 
 import java.math.BigInteger
 import java.text.DecimalFormat
@@ -13,12 +13,12 @@ class FibNumber(var position: Long = 0, var value: BigInteger = 0.toBigInteger()
     }
 
     fun getValueText(): String {
-        if (value.toString().length > 50)
-            return DecimalFormat("0000000000000.#######E0", DecimalFormatSymbols.getInstance(Locale.ENGLISH)).format(
+        return if (value.toString().length > 50)
+            DecimalFormat("0000000000000.#######E0", DecimalFormatSymbols.getInstance(Locale.ENGLISH)).format(
                 value
             )
         else
-            return value.toString()
+            value.toString()
     }
 
 }

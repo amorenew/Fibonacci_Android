@@ -7,7 +7,7 @@
 
         <variable
                 name="item"
-                type="com.amr.fibonacci.helpers.FibNumber"/>
+                type="com.amr.fibonacci.items.FibNumber"/>
     </data>
 
     <androidx.cardview.widget.CardView

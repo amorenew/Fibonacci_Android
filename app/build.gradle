@@ -53,9 +53,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
 
-//    // Support Design
-//    implementation "com.android.support:design:28.0.0"
-
     // CardView
     implementation 'androidx.cardview:cardview:1.0.0'
 
