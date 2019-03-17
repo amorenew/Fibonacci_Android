@@ -5,6 +5,11 @@ Fibonacci implementation for Android
 
 ### An Android app to show the Fibonacci Series.
 
+<font color="red">![Apk Download](https://github.com/amorenew/Fibonacci_Android/blob/master/app/src/main/res/mipmap-hdpi/ic_launcher_round.png) </font>
+
+[Download APK](https://github.com/amorenew/Fibonacci_Android/blob/master/app/release/app-release.apk "APK")
+
+
 I have Used:
 
 ##### 1-Continous Integration by Circle CI
